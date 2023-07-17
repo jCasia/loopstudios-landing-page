@@ -7,7 +7,7 @@ const Header: FC = () => {
     <header className={styles.header}>
       <Nav />
       <div className={styles['content-wrapper']}>
-        <h1>Emmersive Experiences That Delivers</h1>
+        <h1>Emmersive Experiences That Deliver</h1>
       </div>
     </header>
   );

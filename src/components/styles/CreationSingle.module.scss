@@ -1,0 +1,24 @@
+.creation-wrapper {
+  background-color: antiquewhite;
+  position: relative;
+
+  .image-container {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  h3 {
+    color: var(--colour-white);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-25%);
+    left: 5%;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    word-spacing: 100vw;
+  }
+}
