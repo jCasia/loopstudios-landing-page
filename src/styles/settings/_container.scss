@@ -1,8 +1,12 @@
 @mixin container {
-  max-width: 1560px;
+  max-width: 1960px;
   margin: 0 auto;
 }
 
+@mixin container-body {
+  max-width: 1125px;
+  margin: 0 auto;
+}
 @mixin flex-column {
   display: flex;
   flex-direction: column;

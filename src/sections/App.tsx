@@ -1,6 +1,7 @@
 import About from './About';
 import Header from './Header';
 import Creations from './Creations';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <About />
       <Creations />
+      <Footer />
     </>
   );
 }

@@ -5,7 +5,7 @@ import styles from './styles/About.module.scss';
 const About: FC = () => {
   return (
     <section className={styles.about}>
-      <img src={aboutImg} alt='img' />
+      <img src={aboutImg} alt='about image' />
       <div className={styles['about-content']}>
         <h2>The Leader in interactive vr</h2>
         <p>

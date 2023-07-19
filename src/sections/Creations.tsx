@@ -3,8 +3,6 @@ import styles from './styles/Creations.module.scss';
 import { data } from '../datacreation';
 import CreationSingle from '../components/CreationSingle';
 
-console.log(data);
-
 const Creations: FC = () => {
   return (
     <section className={styles.creations}>
@@ -14,7 +12,9 @@ const Creations: FC = () => {
           return <CreationSingle {...item} key={item.id} />;
         })}
       </div>
-      <a href='#'>See all</a>
+      <a href='#' className={styles.seeAll}>
+        See all
+      </a>
     </section>
   );
 };

@@ -1,3 +1,5 @@
+@use '../../styles/settings/media' as mediaQuery;
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -12,5 +14,45 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+
+    @include mediaQuery.responsive(tablet) {
+      display: none;
+    }
+  }
+
+  ul {
+    display: none;
+
+    @include mediaQuery.responsive(tablet) {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+
+      li {
+        list-style: none;
+        position: relative;
+        a {
+          color: white;
+          text-decoration: none;
+          font-size: 1.75rem;
+          font-family: var(--font-alata);
+        }
+        a::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2.5px;
+          background-color: white;
+          bottom: 0;
+          transform: translateY(200%);
+          left: 25%;
+
+          transition: all 0.4s;
+        }
+        a:hover:after {
+          width: 50%;
+        }
+      }
+    }
   }
 }

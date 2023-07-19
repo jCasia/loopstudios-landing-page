@@ -1,0 +1,135 @@
+@use '../../styles/settings/media' as mediaQuery;
+@use '../../styles/settings/container' as container;
+
+.footer {
+  background-color: var(--colour-black);
+
+  @include container.container;
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px 0;
+
+    @include container.container-body;
+
+    @include mediaQuery.responsive(tablet) {
+      display: grid;
+      gap: 0;
+      padding: 50px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        'logo social'
+        'links rights';
+    }
+
+    @include mediaQuery.responsive(desktop) {
+      padding: 45px 0;
+    }
+  }
+
+  .logo {
+    @include mediaQuery.responsive(tablet) {
+      grid-area: logo;
+      width: 30%;
+    }
+  }
+
+  .links-container {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+      margin: 25px 0;
+
+      @include mediaQuery.responsive(tablet) {
+        flex-direction: row;
+      }
+
+      @include mediaQuery.responsive(laptop-md) {
+        gap: 50px;
+      }
+
+      li {
+        position: relative;
+        list-style: none;
+
+        a {
+          color: var(--colour-white);
+          text-decoration: none;
+          font-family: var(--font-alata);
+          font-size: 1.5rem;
+        }
+        a::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2.5px;
+          background-color: white;
+          bottom: 0;
+          transform: translateY(200%);
+          left: 25%;
+
+          transition: all 0.4s;
+        }
+        a:hover:after {
+          width: 50%;
+        }
+      }
+    }
+
+    @include mediaQuery.responsive(tablet) {
+      grid-area: links;
+    }
+  }
+
+  .social-container {
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+
+      li {
+        position: relative;
+        list-style: none;
+
+        a::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2.5px;
+          background-color: white;
+          bottom: 0;
+          transform: translateY(200%);
+          left: 0;
+
+          transition: all 0.4s;
+        }
+        a:hover:after {
+          width: 100%;
+        }
+      }
+    }
+
+    @include mediaQuery.responsive(tablet) {
+      grid-area: social;
+      justify-self: end;
+    }
+  }
+
+  p {
+    color: var(--colour-darkGray);
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    @include mediaQuery.responsive(tablet) {
+      grid-area: rights;
+      justify-self: end;
+    }
+  }
+}
