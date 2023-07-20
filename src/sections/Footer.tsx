@@ -32,7 +32,7 @@ const Footer: FC = () => {
               return (
                 <li key={index}>
                   <a href='#'>
-                    <img src={item} alt={item} />
+                    <img src={item} alt={`${item} logo`} />
                   </a>
                 </li>
               );
