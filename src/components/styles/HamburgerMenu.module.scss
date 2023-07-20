@@ -1,0 +1,69 @@
+@use '../../styles/settings/media' as mediaQuery;
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--colour-black);
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+  padding: 45px 30px;
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(100%);
+
+  transition: all 0.75s;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @include mediaQuery.responsive(tablet) {
+    display: none;
+  }
+
+  .logo-close-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    li {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-75%);
+      transition: all 0.4s ease-in-out;
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          transition-delay: 140ms * $i;
+        }
+      }
+
+      &.down {
+        transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
+      }
+
+      a {
+        color: var(--colour-white);
+        font-size: 3rem;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
